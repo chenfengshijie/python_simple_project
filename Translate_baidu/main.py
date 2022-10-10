@@ -30,28 +30,34 @@ def translate_word(word):
 
 
 def leftClick1(event):
-    pass
+    str = Entry1.get()
+    return_text = translate_word(str)
+    Entry2.config(Entry2,text=return_text)
+    s.set('')
+    Entry2.insert(0,return_text)
 
 def leftClick2(event):
-    pass
+    s.set("")
+    Entry2.insert(0,"")
 
 if __name__ == '__main__':
-    # root = Tk()
-    # root.title('Translations')
-    # root['width']=250;root['height']=250
-    # Label(root,text='Translations words',width=15).place(x=1,y=1)
-    # Entry1 = Entry(root,width=20)
-    # Entry1.place(x=110,y=1)
-    # Label(root,text='Results',width=15).place(x=1,y=20)
-    # s = StringVar()
-    # s.set('Test Count')
-    # Entry2 = Entry(root,width=20,textvariable=s)
-    # Entry2.place(x=110,y=20)
-    # Button1 = Button(root,width=20,text='Translate')
-    # Button1.place(x=0,y=80)
-    # Button2 = Button(root,width=20,text='Empty Translations')
-    # Button1.bind("<Button-1>",leftClick1)
-    # Button2.bind("<Button-1>",leftClick2)
-    # Button2.place(x=110,y=80)
-    # root.mainloop()
-    translate_word("apples is my favorite food")
+    root = Tk()
+    root.title('Translations')
+    root['width']=250;root['height']=250
+    Label(root,text='Translations words',width=15).place(x=1,y=1)
+    
+    Label(root,text='Results',width=15).place(x=1,y=20)
+    s = StringVar()
+    s.set('Test Count')
+    Entry1 = Entry(root,width=20,textvariable=s)
+    Entry1.place(x=110,y=1)
+    Entry2 = Entry(root,width=20)
+    Entry2.place(x=110,y=20)
+    Button1 = Button(root,width=20,text='Translate')
+    Button1.place(x=0,y=80)
+    Button2 = Button(root,width=20,text='Empty Translations')
+    Button1.bind("<Button-1>",leftClick1)
+    Button2.bind("<Button-1>",leftClick2)
+    Button2.place(x=110,y=80)
+    root.mainloop()
+    # translate_word("apples is my favorite food")
